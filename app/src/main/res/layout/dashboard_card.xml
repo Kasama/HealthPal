@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:gravity="center"
+    android:orientation="vertical"
+    android:id="@+id/dashboard_card_layout"
+    >
+
+    <br.usp.icmc.healthpal.healthpal.components.IconTextView
+        android:id="@+id/dashboard_card_icon"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/fa_eye"
+        android:textSize="32sp"
+        />
+    <TextView
+        android:id="@+id/dashboard_card_text"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text=""
+        />
+</LinearLayout>
