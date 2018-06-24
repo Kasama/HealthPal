@@ -1,8 +1,13 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     <declare-styleable name="DashboardCard">
-        <attr name="iconText" format="string" localizatoin="suggested" />
-        <attr name="labelText" format="string" localizatoin="suggested" />
+        <attr name="iconText" format="string" localization="suggested" />
+        <attr name="labelTitle" format="string" localization="suggested" />
+        <attr name="labelText" format="string" localization="suggested" />
+        <attr name="labelFooter" format="string" localization="suggested" />
+        <attr name="labelSize" format="dimension" />
+        <attr name="onClick" format="reference" />
         <attr name="bgColor" format="color" />
+        <attr name="textColor" format="color" />
     </declare-styleable>
 </resources>
