@@ -21,4 +21,11 @@ public class HealPalContract {
         public static final String DESCRIPTION = "description";
         public static final String PHONE = "phone";
     }
+
+    public static final class AlarmEntry implements BaseColumns {
+        public static final String TABLE_NAME = "alarms";
+        public static final String MEDICINE = "medicine";
+        public static final String START_TIME = "start_time";
+        public static final String INTERVAL = "interval";
+    }
 }
