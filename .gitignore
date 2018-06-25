@@ -10,3 +10,5 @@
 /build
 /captures
 .externalNativeBuild
+
+anvisaCrawler/node_modules
