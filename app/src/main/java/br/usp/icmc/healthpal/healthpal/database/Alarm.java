@@ -3,8 +3,11 @@ package br.usp.icmc.healthpal.healthpal.database;
 import android.arch.persistence.room.ColumnInfo;
 import android.arch.persistence.room.Entity;
 import android.arch.persistence.room.PrimaryKey;
+import android.arch.persistence.room.TypeConverters;
 import android.os.Parcel;
 import android.os.Parcelable;
+
+import java.util.Date;
 
 import static br.usp.icmc.healthpal.healthpal.database.HealPalContract.AlarmEntry.INTERVAL;
 import static br.usp.icmc.healthpal.healthpal.database.HealPalContract.AlarmEntry.MEDICINE;
@@ -18,11 +21,12 @@ public class Alarm implements Parcelable {
     @ColumnInfo(name = MEDICINE)
     private long medicine;
     @ColumnInfo(name = START_TIME)
-    private String startTime;
+    @TypeConverters({TimestampConversor.class})
+    private Date startTime;
     @ColumnInfo(name = INTERVAL)
     private int interval;
 
-    public Alarm(long medicine, String startTime, int interval) {
+    public Alarm(long medicine, Date startTime, int interval) {
         this.medicine = medicine;
         this.startTime = startTime;
         this.interval = interval;
@@ -31,7 +35,7 @@ public class Alarm implements Parcelable {
     public Alarm(Parcel in) {
         _id = in.readLong();
         medicine = in.readLong();
-        startTime = in.readString();
+        startTime = new Date(in.readLong());
         interval = in.readInt();
     }
 
@@ -56,7 +60,7 @@ public class Alarm implements Parcelable {
     public void writeToParcel(Parcel parcel, int i) {
         parcel.writeLong(_id);
         parcel.writeLong(medicine);
-        parcel.writeString(startTime);
+        parcel.writeLong(startTime.getTime());
         parcel.writeInt(interval);
     }
 
@@ -76,11 +80,11 @@ public class Alarm implements Parcelable {
         this.medicine = medicine;
     }
 
-    public String getStartTime() {
+    public Date getStartTime() {
         return startTime;
     }
 
-    public void setStartTime(String startTime) {
+    public void setStartTime(Date startTime) {
         this.startTime = startTime;
     }
 

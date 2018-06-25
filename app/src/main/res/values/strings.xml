@@ -1,3 +1,11 @@
 <resources>
     <string name="app_name">Health Pal</string>
+    <string name="title_activity_edit_medicine">EditMedicine</string>
+    <string name="name">Nome</string>
+    <string name="medicine_name_desc">Digite o nome do medicamento</string>
+    <string name="dosage">Dosagem</string>
+    <string name="medicine_dosage_desc">Descreva a dosagem do remédio</string>
+    <string name="description">Descrição</string>
+    <string name="medicine_description_desc">Escreva a descrição de uso da medicação</string>
+    <string name="save">Salvar Alterações</string>
 </resources>

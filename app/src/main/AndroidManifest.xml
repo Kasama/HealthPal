@@ -16,7 +16,8 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".CreateAlarm" />
+        <activity android:name=".EditMedicineActivity" />
+        <activity android:name=".EditAlarmActivity"></activity>
     </application>
 
 </manifest>
