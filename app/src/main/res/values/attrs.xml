@@ -1,13 +1,24 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
+    <attr name="iconText" format="string" localization="suggested" />
+    <attr name="labelText" format="string" localization="suggested" />
+    <attr name="onClick" format="reference" />
+    <attr name="textColor" format="color" />
+
     <declare-styleable name="DashboardCard">
-        <attr name="iconText" format="string" localization="suggested" />
+        <attr name="iconText" />
         <attr name="labelTitle" format="string" localization="suggested" />
-        <attr name="labelText" format="string" localization="suggested" />
+        <attr name="labelText" />
         <attr name="labelFooter" format="string" localization="suggested" />
         <attr name="labelSize" format="dimension" />
-        <attr name="onClick" format="reference" />
         <attr name="bgColor" format="color" />
-        <attr name="textColor" format="color" />
+        <attr name="onClick" />
+        <attr name="textColor" />
+    </declare-styleable>
+    <declare-styleable name="ButtonCard">
+        <attr name="iconText" />
+        <attr name="labelText" />
+        <attr name="onClick" />
+        <attr name="textColor" />
     </declare-styleable>
 </resources>

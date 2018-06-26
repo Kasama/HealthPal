@@ -5,64 +5,55 @@ import android.content.Context;
 import android.content.res.TypedArray;
 import android.support.constraint.ConstraintLayout;
 import android.util.AttributeSet;
-import android.util.TypedValue;
 import android.view.LayoutInflater;
 import android.widget.LinearLayout;
 import android.widget.TextView;
 
 import br.usp.icmc.healthpal.healthpal.R;
 
-public class DashboardCard extends ConstraintLayout {
+public class ButtonCard extends ConstraintLayout {
     Context context;
 
     public LinearLayout layout;
-    public IconTextView icon;
-    public TextView title, text, footer;
+    public IconTextView iconText;
+    public TextView labelText;
 
-    public DashboardCard(Context context) {
+    public ButtonCard(Context context) {
         this(context, null);
     }
 
     @SuppressLint("ResourceAsColor")
-    public DashboardCard(Context context, AttributeSet attrs) {
+    public ButtonCard(Context context, AttributeSet attrs) {
         super(context, attrs);
         this.context = context;
 
         LayoutInflater inflater =
                 (LayoutInflater) context.getSystemService(Context.LAYOUT_INFLATER_SERVICE);
         if (inflater != null) {
-            inflater.inflate(R.layout.dashboard_card, this, true);
+            inflater.inflate(R.layout.button_card, this, true);
         }
 
-        this.layout = this.findViewById(R.id.dashboard_card_layout);
-        this.icon = this.findViewById(R.id.dashboard_card_icon);
-        this.title = this.findViewById(R.id.dashboard_card_title);
-        this.text = this.findViewById(R.id.dashboard_card_text);
-        this.footer = this.findViewById(R.id.dashboard_card_footer);
+        this.layout = this.findViewById(R.id.button_card_layout);
+        this.iconText = this.findViewById(R.id.button_card_icon_text);
+        this.labelText = this.findViewById(R.id.button_card_label_text);
 
         TypedArray a = context.obtainStyledAttributes(
-                attrs, R.styleable.DashboardCard,
+                attrs, R.styleable.ButtonCard,
                 0, 0
         );
-        String iconText = a.getString(R.styleable.DashboardCard_iconText);
-        String labelTitle = a.getString(R.styleable.DashboardCard_labelTitle);
-        String labelText = a.getString(R.styleable.DashboardCard_labelText);
-        String labelFooter = a.getString(R.styleable.DashboardCard_labelFooter);
-        int fontTextColor = a.getColor(R.styleable.DashboardCard_textColor, R.color.colorText);
+        String icon = a.getString(R.styleable.ButtonCard_iconText);
+        String label = a.getString(R.styleable.ButtonCard_labelText);
+        int fontTextColor = a.getColor(R.styleable.ButtonCard_textColor, R.color.colorText);
         a.recycle();
 
         this.setTextColor(fontTextColor);
-        this.setIcon(iconText);
-        title.setText(labelTitle);
-        text.setText(labelText);
-        footer.setText(labelFooter);
+        this.setIcon(icon);
+        labelText.setText(label);
     }
 
     private void setTextColor(int fontTextColor) {
-        this.title.setTextColor(fontTextColor);
-        this.text.setTextColor(fontTextColor);
-        this.footer.setTextColor(fontTextColor);
-        this.icon.setTextColor(fontTextColor);
+        this.iconText.setTextColor(fontTextColor);
+        this.labelText.setTextColor(fontTextColor);
     }
 
     public void setColor(int color) {
@@ -70,7 +61,7 @@ public class DashboardCard extends ConstraintLayout {
     }
 
     public void setIcon(String icon) {
-        this.icon.setText(icon);
+        this.iconText.setText(icon);
     }
 
     @Override
