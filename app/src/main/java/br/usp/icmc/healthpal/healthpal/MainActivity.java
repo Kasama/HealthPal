@@ -5,7 +5,7 @@ import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 
 import br.usp.icmc.healthpal.healthpal.Alarm.AlarmHandler;
-import br.usp.icmc.healthpal.healthpal.components.DashboardCard;
+import br.usp.icmc.healthpal.healthpal.components.ButtonCard;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -18,7 +18,7 @@ public class MainActivity extends AppCompatActivity {
 
         this.handler = new AlarmHandler(this);
 
-        DashboardCard card = findViewById(R.id.dashicon);
+        ButtonCard card = findViewById(R.id.card_add_button);
 
         card.setOnClickListener((e) -> {
             Intent i = new Intent(MainActivity.this, EditMedicineActivity.class);
