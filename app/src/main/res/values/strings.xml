@@ -8,4 +8,8 @@
     <string name="description">Descrição</string>
     <string name="medicine_description_desc">Escreva a descrição de uso da medicação</string>
     <string name="save">Salvar Alterações</string>
+    <string name="title_dashboard">Dashboard</string>
+    <string name="card_default_title">Card Title</string>
+    <string name="card_default_text">Card Text</string>
+    <string name="card_default_footer">Card Footer</string>
 </resources>

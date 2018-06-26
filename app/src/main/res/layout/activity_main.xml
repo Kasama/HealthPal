@@ -7,19 +7,30 @@
     android:layout_height="match_parent"
     tools:context=".MainActivity">
 
+    <TextView
+        android:id="@+id/tv_title_dashboard"
+        android:text="@string/title_dashboard"
+        android:textColor="@color/colorTitle"
+        android:layout_height="wrap_content"
+        android:layout_width="match_parent"
+        android:layout_margin="20dp"
+        android:textAlignment="center"
+        android:textSize="28sp"
+        android:fontFamily="sans-serif-light"
+        app:layout_constraintTop_toTopOf="parent"
+        />
+
     <br.usp.icmc.healthpal.healthpal.components.DashboardCard
         android:id="@+id/dashicon"
-        android:layout_margin="20dp"
+        android:layout_margin="10dp"
         android:layout_width="match_parent"
-        android:layout_height="100dp"
-        app:bgColor="@color/colorAccent"
-        app:textColor="@color/colorText"
+        android:layout_height="135dp"
+        app:textColor="@color/colorCardText"
         app:iconText="@string/fa_clock"
-        app:labelSize="20dp"
         app:labelTitle="Próxima Medicação"
         app:labelText="Amoxicilina, 5mg"
         app:labelFooter="12:10"
-        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/tv_title_dashboard"
         />
 
 </android.support.constraint.ConstraintLayout>

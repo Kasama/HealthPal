@@ -48,18 +48,14 @@ public class DashboardCard extends ConstraintLayout {
         String labelTitle = a.getString(R.styleable.DashboardCard_labelTitle);
         String labelText = a.getString(R.styleable.DashboardCard_labelText);
         String labelFooter = a.getString(R.styleable.DashboardCard_labelFooter);
-        int bgColor = a.getColor(R.styleable.DashboardCard_bgColor, R.color.colorAccent);
         int fontTextColor = a.getColor(R.styleable.DashboardCard_textColor, R.color.colorText);
-        int labelSize = a.getDimensionPixelSize(R.styleable.DashboardCard_labelSize, 0);
         a.recycle();
 
-        this.setColor(bgColor);
         this.setTextColor(fontTextColor);
         this.setIcon(iconText);
         title.setText(labelTitle);
         text.setText(labelText);
         footer.setText(labelFooter);
-        this.setTextSize(labelSize);
     }
 
     private void setTextColor(int fontTextColor) {

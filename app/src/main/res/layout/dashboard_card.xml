@@ -2,50 +2,53 @@
 
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
+    android:layout_height="135dp"
     android:gravity="center"
     android:orientation="vertical"
-    android:id="@+id/dashboard_card_layout">
+    android:id="@+id/dashboard_card_layout"
+    android:background="@drawable/layout_card"
+    android:padding="5dp">
     <android.support.constraint.ConstraintLayout
-        android:layout_gravity="center"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content">
+        android:layout_height="35sp"
+        android:layout_margin="5dp">
 
         <br.usp.icmc.healthpal.healthpal.components.IconTextView
             android:id="@+id/dashboard_card_icon"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_margin="5dp"
             android:text="@string/fa_eye"
             app:layout_constraintLeft_toLeftOf="parent"
             app:layout_constraintTop_toTopOf="parent"
-            android:textSize="32sp"
-            />
+            android:textSize="26sp"
+            android:textColor="@color/colorCardText"
+            android:gravity="center_vertical" />
+
         <TextView
             android:id="@+id/dashboard_card_title"
             android:layout_width="match_parent"
-            android:layout_height="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="5dp"
+            android:fontFamily="sans-serif-light"
+            android:text="@string/card_default_title"
             android:textAlignment="center"
+            android:textColor="@color/colorCardText"
             android:textSize="18sp"
-            android:textColor="@color/colorPrimary"
-            />
+            android:gravity="center_vertical" />
     </android.support.constraint.ConstraintLayout>
-
-    <Space
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:layout_weight="1"
-        />
 
     <TextView
         android:id="@+id/dashboard_card_text"
-        android:layout_width="wrap_content"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:textSize="24sp"
+        android:text="@string/card_default_text"
+        android:textAlignment="center"
+        android:textSize="28sp"
         android:textStyle="bold"
-        android:textColor="@color/colorPrimary"
-        />
+        android:textColor="@color/colorCardText"
+        android:gravity="center" />
 
     <Space
         android:layout_width="match_parent"
@@ -55,11 +58,13 @@
 
     <TextView
         android:id="@+id/dashboard_card_footer"
-        android:layout_marginBottom="10sp"
-        android:layout_width="wrap_content"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:textSize="18sp"
+        android:layout_margin="5dp"
+        android:text="@string/card_default_footer"
+        android:textAlignment="center"
+        android:textSize="20sp"
         android:textStyle="bold"
-        android:textColor="@color/colorPrimary"
+        android:textColor="@color/colorCardText"
         />
 </LinearLayout>
