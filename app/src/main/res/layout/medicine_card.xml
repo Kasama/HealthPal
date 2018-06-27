@@ -104,11 +104,14 @@
             app:layout_constraintRight_toRightOf="parent">
             <!--Modificar ícone em TEXT aqui-->
             <br.usp.icmc.healthpal.healthpal.components.IconTextView
+                android:id="@+id/medicineIcon"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="@string/fa_user"
                 android:textColor="@color/colorText"
-                android:textSize="48sp" />
+                android:textSize="48sp"
+                android:onClick="handleLeaflet"
+                />
         </LinearLayout>
     </android.support.constraint.ConstraintLayout>
 

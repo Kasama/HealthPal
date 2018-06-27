@@ -13,7 +13,7 @@ public class BottomNavbar extends AppCompatActivity {
             = new BottomNavigationView.OnNavigationItemSelectedListener() {
 
 
-//        Colocar links de para cada atividade aqui no switch
+        // Colocar links de para cada atividade aqui no switch
         @Override
         public boolean onNavigationItemSelected(@NonNull MenuItem item) {
 //            switch (item.getItemId()) {

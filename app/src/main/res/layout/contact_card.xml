@@ -66,7 +66,7 @@
                         android:layout_height="wrap_content"
                         android:text="@string/medicine_card_presp"/>
                     <TextView
-                        android:id="@+id/medicieDescription"
+                        android:id="@+id/medicinePrescription"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"/>
                 </LinearLayout>
