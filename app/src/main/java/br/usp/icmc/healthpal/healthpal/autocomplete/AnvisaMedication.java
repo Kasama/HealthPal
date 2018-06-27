@@ -13,6 +13,11 @@ public class AnvisaMedication {
         this.code = code;
     }
 
+    @Override
+    public String toString() {
+        return this.name + " - " + this.company;
+    }
+
     public AnvisaMedication() { }
 
     public String getName() {
