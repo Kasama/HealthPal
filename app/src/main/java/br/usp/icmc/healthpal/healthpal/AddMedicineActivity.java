@@ -40,6 +40,7 @@ public class AddMedicineActivity extends AppCompatActivity {
     private int hour, minute;
 
     private Database db;
+    private String leaflet;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -64,6 +65,7 @@ public class AddMedicineActivity extends AppCompatActivity {
         this.name.setAdapter(adapter);
         this.name.setOnItemClickListener((adapterView, view, position, l) -> {
             String medicineName = adapter.getItem(position).getName();
+            this.leaflet = adapter.getItem(position).getLeaflet();
             this.name.setText(medicineName);
         });
         this.dateSetListener = new DatePickerDialog.OnDateSetListener() {
@@ -129,7 +131,7 @@ public class AddMedicineActivity extends AppCompatActivity {
                 String description = AddMedicineActivity.this.description.getText().toString();
                 String dosage = AddMedicineActivity.this.dosage.getText().toString();
 
-                Medicine medicine = new Medicine(name, description, dosage, 0);
+                Medicine medicine = new Medicine(name, description, dosage, 0, leaflet);
 
                 db.medicineDao().insert(medicine);
 
