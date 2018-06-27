@@ -13,6 +13,7 @@ public class HealPalContract {
         public static final String DESCRIPTION = "description";
         public static final String MEDIC = "medic";
         public static final String DOSAGE = "dosage";
+        public static final String LEAFLET_LINK = "leaflet";
     }
 
     public static final class MedicEntry implements BaseColumns {

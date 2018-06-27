@@ -20,6 +20,7 @@ public class EditMedicineActivity extends AppCompatActivity {
     private EditText description;
     private EditText dosage;
     private Button save;
+    private String leafletLink;
 
     private Database db;
 
@@ -40,6 +41,7 @@ public class EditMedicineActivity extends AppCompatActivity {
         this.name.setAdapter(adapter);
         this.name.setOnItemClickListener((adapterView, view, position, l) -> {
             String medicineName = adapter.getItem(position).getName();
+            this.leafletLink = adapter.getItem(position).getLeaflet();
             this.name.setText(medicineName);
         });
     }
@@ -58,7 +60,7 @@ public class EditMedicineActivity extends AppCompatActivity {
                 String description = EditMedicineActivity.this.description.getText().toString();
                 String dosage = EditMedicineActivity.this.dosage.getText().toString();
 
-                Medicine medicine = new Medicine(name, description, dosage, 0);
+                Medicine medicine = new Medicine(name, description, dosage, 0, leafletLink);
 
                 db.medicineDao().insert(medicine);
 

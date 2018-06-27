@@ -20,7 +20,8 @@
         <activity android:name=".EditAlarmActivity" />
         <activity
             android:name=".BottomNavbar"
-            android:label="@string/title_activity_bottom_navbar"></activity>
+            android:label="@string/title_activity_bottom_navbar" />
+        <activity android:name=".MedicineList"></activity>
     </application>
 
 </manifest>

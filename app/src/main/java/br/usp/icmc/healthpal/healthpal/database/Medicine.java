@@ -9,6 +9,7 @@ import android.os.Parcelable;
 
 import static br.usp.icmc.healthpal.healthpal.database.HealPalContract.MedicineEntry.DESCRIPTION;
 import static br.usp.icmc.healthpal.healthpal.database.HealPalContract.MedicineEntry.DOSAGE;
+import static br.usp.icmc.healthpal.healthpal.database.HealPalContract.MedicineEntry.LEAFLET_LINK;
 import static br.usp.icmc.healthpal.healthpal.database.HealPalContract.MedicineEntry.MEDIC;
 import static br.usp.icmc.healthpal.healthpal.database.HealPalContract.MedicineEntry.NAME;
 import static br.usp.icmc.healthpal.healthpal.database.HealPalContract.MedicineEntry.TABLE_NAME;
@@ -32,13 +33,60 @@ public class Medicine implements Parcelable {
     private String dosage;
     @ColumnInfo(name = MEDIC)
     private long medic;
+    @ColumnInfo(name = LEAFLET_LINK)
+    private String leafletLink;
 
-    public Medicine(String name, String description, String dosage, long medic) {
+    public Medicine(String name, String description, String dosage, long medic, String leaflet) {
         this.name = name;
         this.description = description;
         this.dosage = dosage;
         this.medic = medic;
+        this.leafletLink = leaflet;
     }
+
+    public String getLeafletLink() {
+        return leafletLink;
+    }
+
+    public void setLeafletLink(String leafletLink) {
+        this.leafletLink = leafletLink;
+    }
+
+    protected Medicine(Parcel in) {
+        _id = in.readLong();
+        name = in.readString();
+        description = in.readString();
+        dosage = in.readString();
+        medic = in.readLong();
+        leafletLink = in.readString();
+    }
+
+    @Override
+    public void writeToParcel(Parcel dest, int flags) {
+        dest.writeLong(_id);
+        dest.writeString(name);
+        dest.writeString(description);
+        dest.writeString(dosage);
+        dest.writeLong(medic);
+        dest.writeString(leafletLink);
+    }
+
+    @Override
+    public int describeContents() {
+        return 0;
+    }
+
+    public static final Creator<Medicine> CREATOR = new Creator<Medicine>() {
+        @Override
+        public Medicine createFromParcel(Parcel in) {
+            return new Medicine(in);
+        }
+
+        @Override
+        public Medicine[] newArray(int size) {
+            return new Medicine[size];
+        }
+    };
 
     public long get_id() {
         return _id;
@@ -80,37 +128,4 @@ public class Medicine implements Parcelable {
         this.medic = medic;
     }
 
-    public Medicine(Parcel in) {
-        _id = in.readLong();
-        name = in.readString();
-        description = in.readString();
-        dosage = in.readString();
-        medic = in.readLong();
-    }
-
-    public static final Creator<Medicine> CREATOR = new Creator<Medicine>() {
-        @Override
-        public Medicine createFromParcel(Parcel in) {
-            return new Medicine(in);
-        }
-
-        @Override
-        public Medicine[] newArray(int size) {
-            return new Medicine[size];
-        }
-    };
-
-    @Override
-    public int describeContents() {
-        return 0;
-    }
-
-    @Override
-    public void writeToParcel(Parcel parcel, int i) {
-        parcel.writeLong(_id);
-        parcel.writeString(name);
-        parcel.writeString(description);
-        parcel.writeString(dosage);
-        parcel.writeLong(medic);
-    }
 }
