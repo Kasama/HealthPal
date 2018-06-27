@@ -6,4 +6,5 @@
     <color name="colorText">#212121</color>
     <color name="colorTitle">#757575</color>
     <color name="colorCardText">#FAFAFA</color>
+    <color name="colorActionBackground">#FFFFFF</color>
 </resources>

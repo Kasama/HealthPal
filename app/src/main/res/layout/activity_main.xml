@@ -34,7 +34,7 @@
         />
 
     <br.usp.icmc.healthpal.healthpal.components.ButtonCard
-        android:id="@+id/dc_add_button"
+        android:id="@+id/card_add_button"
         android:layout_margin="10dp"
         android:layout_width="match_parent"
         android:layout_height="50dp"
