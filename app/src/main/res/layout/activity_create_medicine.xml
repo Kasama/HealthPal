@@ -43,7 +43,7 @@
                     android:text="@string/name"
                     android:contentDescription="@string/medicine_name_desc"
                     />
-                <EditText
+                <AutoCompleteTextView
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:id="@+id/medicineName"
