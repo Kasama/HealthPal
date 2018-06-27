@@ -1,0 +1,149 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_height="match_parent"
+    android:layout_width="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+    <ImageView
+        android:layout_height="match_parent"
+        android:layout_width="match_parent"
+        android:src="@drawable/pills"
+        android:scaleType="centerCrop"
+        />
+    <LinearLayout
+        android:layout_height="match_parent"
+        android:layout_width="match_parent"
+        android:background="@drawable/dim_frame"
+        />
+
+    <android.support.constraint.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <android.support.constraint.ConstraintLayout
+            android:id="@+id/action_card"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@color/colorActionBackground"
+            android:paddingBottom="25sp"
+            android:paddingLeft="25sp"
+            android:paddingRight="25sp"
+            android:paddingTop="75sp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0.498"
+            tools:layout_editor_absoluteX="63dp">
+            <!--Inserir conteúdo aqui-->
+
+            <LinearLayout
+                android:id="@+id/l1"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="24dp"
+                android:orientation="vertical"
+                app:layout_constraintLeft_toLeftOf="@id/action_card"
+                tools:layout_editor_absoluteY="0dp">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="ASDF" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="ASDF" />
+
+            </LinearLayout>
+
+
+            <LinearLayout
+                android:id="@+id/l2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="24dp"
+                android:orientation="vertical"
+                app:layout_constraintLeft_toLeftOf="@id/action_card"
+                app:layout_constraintTop_toBottomOf="@id/l1">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="ASDF" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="ASDF" />
+            </LinearLayout>
+
+
+            <LinearLayout
+                android:id="@+id/l3"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="24dp"
+                android:orientation="vertical"
+                app:layout_constraintLeft_toLeftOf="@id/action_card"
+                app:layout_constraintTop_toBottomOf="@id/l2">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="ASDF" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="ASDF" />
+            </LinearLayout>
+
+
+            <Button
+                android:id="@+id/medicineEditButton"
+                android:layout_width="80dp"
+                android:layout_height="80dp"
+                android:layout_gravity="right"
+                android:layout_marginRight="36dp"
+                android:background="@drawable/layout_card"
+                android:onClick="handleEdit"
+                android:text="@string/fa_eye"
+                app:layout_constraintRight_toRightOf="@id/action_card"
+                tools:layout_editor_absoluteY="0dp" />
+
+            <Button
+                android:id="@+id/medicineCallDoctor"
+                android:layout_width="80dp"
+                android:layout_height="80dp"
+                android:layout_gravity="right"
+                android:layout_marginRight="24dp"
+                android:background="@drawable/layout_card"
+                android:onClick="handleCall"
+                android:text="@string/fa_eye"
+                app:layout_constraintRight_toRightOf="@id/action_card"
+                app:layout_constraintTop_toBottomOf="@id/medicineEditButton" />
+
+        </android.support.constraint.ConstraintLayout>
+
+        <LinearLayout
+            android:id="@+id/action_card_icon"
+            android:layout_width="120sp"
+            android:layout_height="120sp"
+            android:layout_gravity="center_horizontal"
+            android:background="@drawable/circle_background"
+            android:gravity="center"
+            android:translationY="60sp"
+            app:layout_constraintBottom_toTopOf="@id/action_card"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent">
+            <!--Modificar ícone em TEXT aqui-->
+            <br.usp.icmc.healthpal.healthpal.components.IconTextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/fa_eye"
+                android:textColor="@color/colorText"
+                android:textSize="48sp" />
+        </LinearLayout>
+    </android.support.constraint.ConstraintLayout>
+
+</FrameLayout>

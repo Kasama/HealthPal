@@ -21,4 +21,10 @@
         <attr name="onClick" />
         <attr name="textColor" />
     </declare-styleable>
+    <declare-styleable name="EmergencyCard">
+        <attr name="iconText" />
+        <attr name="labelFooter" />
+        <attr name="onClick" />
+        <attr name="textColor" />
+    </declare-styleable>
 </resources>
