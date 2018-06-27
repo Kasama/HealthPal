@@ -13,4 +13,13 @@
     <string name="card_default_title">Card Title</string>
     <string name="card_default_text">Card Text</string>
     <string name="card_default_footer">Card Footer</string>
+    <string name="medicine_card_presp">Prescriçao</string>
+    <string name="medicine_card_obs">Observaçao</string>
+    <string name="title_activity_bottom_navbar">BottomNavbar</string>
+    <string name="title_home">Home</string>
+    <string name="title_notifications">Notifications</string>
+    <string name="navbar_home">Home</string>
+    <string name="navbar_medicine">Medicine</string>
+    <string name="navbar_contacts">Contacts</string>
+    <string name="navbar_emergency">Emergency</string>
 </resources>

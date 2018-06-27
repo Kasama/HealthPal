@@ -10,4 +10,8 @@
     <string name="fa_plus_circle">&#xf055;</string>
     <string name="fa_tablets">&#xf490;</string>
     <string name="fa_user_md">&#xf0f0;</string>
+    <string name="fa_edit">&#xf044;</string>
+    <string name="fa_medic">&#xf0f0;</string>
+    <string name="fa_call">&#xf098;</string>
+    <string name="fa_user">&#xf2bd;</string>
 </resources>
