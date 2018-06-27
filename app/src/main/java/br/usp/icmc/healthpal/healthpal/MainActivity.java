@@ -10,10 +10,12 @@ import android.widget.AutoCompleteTextView;
 import br.usp.icmc.healthpal.healthpal.Alarm.AlarmHandler;
 import br.usp.icmc.healthpal.healthpal.autocomplete.AutocompleteAdapter;
 import br.usp.icmc.healthpal.healthpal.components.ButtonCard;
+import br.usp.icmc.healthpal.healthpal.components.DashboardCard;
 
 public class MainActivity extends AppCompatActivity {
 
     AlarmHandler handler;
+    DashboardCard card;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -23,6 +25,7 @@ public class MainActivity extends AppCompatActivity {
         this.handler = new AlarmHandler(this);
 
         ButtonCard card = findViewById(R.id.card_add_button);
+        DashboardCard card1 = findViewById(R.id.dashboard_card_icon);
 
         card.setOnClickListener((e) -> {
             Intent i = new Intent(MainActivity.this, AddMedicineActivity.class);

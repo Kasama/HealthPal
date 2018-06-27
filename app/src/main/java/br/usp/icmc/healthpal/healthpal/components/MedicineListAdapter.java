@@ -12,7 +12,7 @@ import android.view.ViewGroup;
 
 import java.util.List;
 
-import br.usp.icmc.healthpal.healthpal.EditMedicineActivity;
+import br.usp.icmc.healthpal.healthpal.AddMedicineActivity;
 import br.usp.icmc.healthpal.healthpal.R;
 import br.usp.icmc.healthpal.healthpal.database.Database;
 import br.usp.icmc.healthpal.healthpal.database.Medicine;
@@ -58,7 +58,7 @@ public class MedicineListAdapter extends RecyclerView.Adapter<MedicineListAdapte
     @Override
     public void onBindViewHolder(@NonNull ViewHolder holder, int position) {
         holder.itemView.setOnClickListener(view -> {
-            Intent intent = new Intent(this.context, EditMedicineActivity.class);
+            Intent intent = new Intent(this.context, AddMedicineActivity.class);
             Medicine medicine = this.medicineList.get(position);
             intent.putExtra("MEDICINE", medicine);
             this.context.startActivity(intent);

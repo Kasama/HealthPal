@@ -34,22 +34,22 @@ public class Medicine implements Parcelable {
     @ColumnInfo(name = MEDIC)
     private long medic;
     @ColumnInfo(name = LEAFLET_LINK)
-    private String leafletLink;
+    private String leaflet;
 
     public Medicine(String name, String description, String dosage, long medic, String leaflet) {
         this.name = name;
         this.description = description;
         this.dosage = dosage;
         this.medic = medic;
-        this.leafletLink = leaflet;
+        this.leaflet = leaflet;
     }
 
-    public String getLeafletLink() {
-        return leafletLink;
+    public String getLeaflet() {
+        return leaflet;
     }
 
-    public void setLeafletLink(String leafletLink) {
-        this.leafletLink = leafletLink;
+    public void setLeaflet(String leaflet) {
+        this.leaflet = leaflet;
     }
 
     protected Medicine(Parcel in) {
@@ -58,7 +58,7 @@ public class Medicine implements Parcelable {
         description = in.readString();
         dosage = in.readString();
         medic = in.readLong();
-        leafletLink = in.readString();
+        leaflet = in.readString();
     }
 
     @Override
@@ -68,7 +68,7 @@ public class Medicine implements Parcelable {
         dest.writeString(description);
         dest.writeString(dosage);
         dest.writeLong(medic);
-        dest.writeString(leafletLink);
+        dest.writeString(leaflet);
     }
 
     @Override
