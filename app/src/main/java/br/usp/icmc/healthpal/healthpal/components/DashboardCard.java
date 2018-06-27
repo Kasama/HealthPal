@@ -7,6 +7,7 @@ import android.support.constraint.ConstraintLayout;
 import android.util.AttributeSet;
 import android.util.TypedValue;
 import android.view.LayoutInflater;
+import android.widget.AutoCompleteTextView;
 import android.widget.LinearLayout;
 import android.widget.TextView;
 
@@ -18,6 +19,7 @@ public class DashboardCard extends ConstraintLayout {
     public LinearLayout layout;
     public IconTextView icon;
     public TextView title, text, footer;
+    public AutoCompleteTextView medicines;
 
     public DashboardCard(Context context) {
         this(context, null);

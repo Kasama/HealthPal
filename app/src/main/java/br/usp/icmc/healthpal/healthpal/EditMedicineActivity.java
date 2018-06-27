@@ -6,15 +6,17 @@ import android.os.AsyncTask;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
+import android.widget.AutoCompleteTextView;
 import android.widget.Button;
 import android.widget.EditText;
 
+import br.usp.icmc.healthpal.healthpal.autocomplete.AutocompleteAdapter;
 import br.usp.icmc.healthpal.healthpal.database.Database;
 import br.usp.icmc.healthpal.healthpal.database.Medicine;
 
 public class EditMedicineActivity extends AppCompatActivity {
 
-    private EditText name;
+    private AutoCompleteTextView name;
     private EditText description;
     private EditText dosage;
     private Button save;
@@ -32,6 +34,14 @@ public class EditMedicineActivity extends AppCompatActivity {
         this.description = findViewById(R.id.medicineDescription);
         this.dosage = findViewById(R.id.medicineDosage);
         this.save = findViewById(R.id.medicineSaveButton);
+
+        AutocompleteAdapter adapter =
+                new AutocompleteAdapter(this, android.R.layout.simple_dropdown_item_1line);
+        this.name.setAdapter(adapter);
+        this.name.setOnItemClickListener((adapterView, view, position, l) -> {
+            String medicineName = adapter.getItem(position).getName();
+            this.name.setText(medicineName);
+        });
     }
 
     public void handleCancel(View view) {
