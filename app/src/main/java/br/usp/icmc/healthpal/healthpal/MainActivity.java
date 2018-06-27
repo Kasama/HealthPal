@@ -25,7 +25,7 @@ public class MainActivity extends AppCompatActivity {
         ButtonCard card = findViewById(R.id.card_add_button);
 
         card.setOnClickListener((e) -> {
-            Intent i = new Intent(MainActivity.this, EditMedicineActivity.class);
+            Intent i = new Intent(MainActivity.this, AddMedicineActivity.class);
             MainActivity.this.startActivity(i);
 //            this.handler.setAlarm(
 //                    System.currentTimeMillis() + (30 * 1000),
@@ -33,6 +33,5 @@ public class MainActivity extends AppCompatActivity {
 //                    MainActivity.class
 //            );
         });
-
     }
 }

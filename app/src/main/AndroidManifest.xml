@@ -16,7 +16,7 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".EditMedicineActivity" />
+        <activity android:name=".AddMedicineActivity" />
         <activity android:name=".EditAlarmActivity" />
         <activity
             android:name=".BottomNavbar"
