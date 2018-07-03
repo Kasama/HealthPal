@@ -119,12 +119,13 @@
             app:layout_constraintBottom_toTopOf="@id/action_card"
             android:translationY="60sp"
             >
-            <br.usp.icmc.healthpal.healthpal.components.IconTextView
+            <TextView
                 android:layout_height="wrap_content"
                 android:layout_width="wrap_content"
                 android:text="@string/fa_capsules"
                 android:textColor="@color/colorText"
                 android:textSize="48sp"
+                android:fontFamily="@font/font_awesome_solid"
                 android:layout_marginLeft="5sp"
                 android:layout_marginBottom="5sp"
                 />

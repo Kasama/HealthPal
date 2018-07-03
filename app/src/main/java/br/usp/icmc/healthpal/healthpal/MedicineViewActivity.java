@@ -11,8 +11,6 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
 
-import br.usp.icmc.healthpal.healthpal.components.IconTextView;
-
 import static br.usp.icmc.healthpal.healthpal.database.HealPalContract.MedicineEntry.DESCRIPTION;
 import static br.usp.icmc.healthpal.healthpal.database.HealPalContract.MedicineEntry.DOSAGE;
 import static br.usp.icmc.healthpal.healthpal.database.HealPalContract.MedicineEntry.LEAFLET_LINK;
@@ -21,7 +19,7 @@ import static br.usp.icmc.healthpal.healthpal.database.HealPalContract.MedicineE
 public class MedicineViewActivity extends AppCompatActivity {
 
     private TextView name, last_dosage, prescription, observation;
-    private IconTextView icon;
+    private TextView icon;
     private Button edit, medic;
     private String leaflet;
 

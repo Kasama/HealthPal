@@ -17,7 +17,7 @@ public class DashboardCard extends ConstraintLayout {
     Context context;
 
     public LinearLayout layout;
-    public IconTextView icon;
+    public TextView icon;
     public TextView title, text, footer;
     public AutoCompleteTextView medicines;
 

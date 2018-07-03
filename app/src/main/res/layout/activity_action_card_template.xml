@@ -50,10 +50,11 @@
             android:translationY="60sp"
             >
             <!--Modificar ícone em TEXT aqui-->
-            <br.usp.icmc.healthpal.healthpal.components.IconTextView
+            <TextView
                 android:layout_height="wrap_content"
                 android:layout_width="wrap_content"
                 android:text="@string/fa_eye"
+                android:fontFamily="@font/font_awesome_solid"
                 android:textColor="@color/colorText"
                 android:textSize="48sp"
                 />

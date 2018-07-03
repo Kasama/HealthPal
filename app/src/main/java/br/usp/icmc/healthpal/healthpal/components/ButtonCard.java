@@ -15,7 +15,7 @@ public class ButtonCard extends ConstraintLayout {
     Context context;
 
     public LinearLayout layout;
-    public IconTextView iconText;
+    public TextView iconText;
     public TextView labelText;
 
     public ButtonCard(Context context) {

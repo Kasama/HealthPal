@@ -15,7 +15,7 @@ public class EmergencyCard extends ConstraintLayout{
     Context context;
 
     public LinearLayout layout;
-    public IconTextView icon;
+    public TextView icon;
     public TextView footer;
 
     public EmergencyCard(Context context) {this(context, null);}
