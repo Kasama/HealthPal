@@ -23,7 +23,7 @@
         <activity
             android:name=".BottomNavbar"
             android:label="@string/title_activity_bottom_navbar" />
-        <activity android:name=".MedicineList"></activity>
+        <activity android:name=".MedicineListFragment"></activity>
     </application>
 
 </manifest>
