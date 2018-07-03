@@ -1,29 +1,27 @@
 <?xml version="1.0" encoding="utf-8"?>
 <menu xmlns:android="http://schemas.android.com/apk/res/android">
 
-    <!--ALTERAR ICONS-->
-
     <item
         android:id="@+id/navigation_home"
-        android:icon="@drawable/ic_home_black_24dp"
+        android:icon="@drawable/fa_home"
         android:title="@string/navbar_home"
         />
 
     <item
         android:id="@+id/navigation_medicine"
-        android:icon="@drawable/ic_dashboard_black_24dp"
+        android:icon="@drawable/fa_capsules"
         android:title="@string/navbar_medicine"
         />
 
     <item
         android:id="@+id/navigation_contacts"
-        android:icon="@drawable/ic_notifications_black_24dp"
+        android:icon="@drawable/fa_id_card"
         android:title="@string/navbar_contacts"
         />
 
     <item
         android:id="@+id/navigation_emergency"
-        android:icon="@drawable/ic_notifications_black_24dp"
+        android:icon="@drawable/fa_exclamation"
         android:title="@string/navbar_emergency"
         />
 
