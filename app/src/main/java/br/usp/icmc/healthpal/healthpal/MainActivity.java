@@ -25,7 +25,12 @@ public class MainActivity extends AppCompatActivity {
         this.handler = new AlarmHandler(this);
 
         ButtonCard card = findViewById(R.id.card_add_button);
-        DashboardCard card1 = findViewById(R.id.dashboard_card_icon);
+        DashboardCard card1 = findViewById(R.id.dashicon);
+
+        card1.setOnClickListener(view -> {
+            Intent i = new Intent(MainActivity.this, MedicineList.class);
+            MainActivity.this.startActivity(i);
+        });
 
         card.setOnClickListener((e) -> {
             Intent i = new Intent(MainActivity.this, AddMedicineActivity.class);
