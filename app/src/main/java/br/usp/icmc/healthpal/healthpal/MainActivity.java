@@ -33,6 +33,12 @@ public class MainActivity extends AppCompatActivity {
             case R.id.navigation_medicine:
                 selected = new MedicineListFragment();
                 break;
+            case R.id.navigation_contacts:
+                selected = new ContactListFragment();
+                break;
+            case R.id.navigation_emergency:
+                selected = new EmergencyListFragment();
+                break;
             default:
                 selected = new DashboardFragment();
                 break;
