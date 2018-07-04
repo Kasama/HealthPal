@@ -8,6 +8,7 @@ import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.support.v4.app.ActivityCompat;
 import android.support.v4.app.Fragment;
+import android.support.v4.content.ContextCompat;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -34,52 +35,70 @@ public class EmergencyListFragment extends Fragment {
         EmergencyCard police = getView().findViewById(R.id.police);
         EmergencyCard contact = getView().findViewById(R.id.emergencyContact);
 
+
         hospital.setOnClickListener((e) -> {
             Intent callIntent = new Intent(Intent.ACTION_CALL);
             callIntent.setData(Uri.parse("tel:0377778888"));
-
-            if (ActivityCompat.checkSelfPermission(this.getContext(),
-                    Manifest.permission.CALL_PHONE) != PackageManager.PERMISSION_GRANTED) {
-                return;
+            if (ContextCompat.checkSelfPermission(getActivity(), Manifest.permission.CALL_PHONE) != PackageManager.PERMISSION_GRANTED) {
+                ActivityCompat.requestPermissions(getActivity(), new String[]{Manifest.permission.CALL_PHONE},0);
             }
-
-            this.startActivity(callIntent);
+            else {
+                try {
+                    startActivity(callIntent);
+                }
+                catch (SecurityException error) {
+                    error.printStackTrace();
+                }
+            }
         });
 
         firefighters.setOnClickListener((e) -> {
             Intent callIntent = new Intent(Intent.ACTION_CALL);
             callIntent.setData(Uri.parse("tel:0377778888"));
 
-            if (ActivityCompat.checkSelfPermission(this.getContext(),
-                    Manifest.permission.CALL_PHONE) != PackageManager.PERMISSION_GRANTED) {
-                return;
+            if (ContextCompat.checkSelfPermission(getActivity(), Manifest.permission.CALL_PHONE) != PackageManager.PERMISSION_GRANTED) {
+                ActivityCompat.requestPermissions(getActivity(), new String[]{Manifest.permission.CALL_PHONE},0);
             }
-
-            this.startActivity(callIntent);
+            else {
+                try {
+                    startActivity(callIntent);
+                }
+                catch (SecurityException error) {
+                    error.printStackTrace();
+                }
+            }
         });
 
         police.setOnClickListener((e) -> {
             Intent callIntent = new Intent(Intent.ACTION_CALL);
             callIntent.setData(Uri.parse("tel:0377778888"));
-
-            if (ActivityCompat.checkSelfPermission(this.getContext(),
-                    Manifest.permission.CALL_PHONE) != PackageManager.PERMISSION_GRANTED) {
-                return;
+            if (ContextCompat.checkSelfPermission(getActivity(), Manifest.permission.CALL_PHONE) != PackageManager.PERMISSION_GRANTED) {
+                ActivityCompat.requestPermissions(getActivity(), new String[]{Manifest.permission.CALL_PHONE},0);
             }
-
-            this.startActivity(callIntent);
+            else {
+                try {
+                    startActivity(callIntent);
+                }
+                catch (SecurityException error) {
+                    error.printStackTrace();
+                }
+            }
         });
 
         contact.setOnClickListener((e) -> {
             Intent callIntent = new Intent(Intent.ACTION_CALL);
             callIntent.setData(Uri.parse("tel:0377778888"));
-
-            if (ActivityCompat.checkSelfPermission(this.getContext(),
-                    Manifest.permission.CALL_PHONE) != PackageManager.PERMISSION_GRANTED) {
-                return;
+            if (ContextCompat.checkSelfPermission(getActivity(), Manifest.permission.CALL_PHONE) != PackageManager.PERMISSION_GRANTED) {
+                ActivityCompat.requestPermissions(getActivity(), new String[]{Manifest.permission.CALL_PHONE},0);
             }
-
-            this.startActivity(callIntent);
+            else {
+                try {
+                    startActivity(callIntent);
+                }
+                catch (SecurityException error) {
+                    error.printStackTrace();
+                }
+            }
         });
 
     }
