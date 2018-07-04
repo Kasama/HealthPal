@@ -11,6 +11,8 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
 
+import br.usp.icmc.healthpal.healthpal.database.Medicine;
+
 import static br.usp.icmc.healthpal.healthpal.database.HealPalContract.MedicineEntry.DESCRIPTION;
 import static br.usp.icmc.healthpal.healthpal.database.HealPalContract.MedicineEntry.DOSAGE;
 import static br.usp.icmc.healthpal.healthpal.database.HealPalContract.MedicineEntry.LEAFLET_LINK;
@@ -40,13 +42,13 @@ public class MedicineViewActivity extends AppCompatActivity {
         this.medic = findViewById(R.id.medicineCallDoctor);
         this.icon = findViewById(R.id.medicineIcon);
 
-
         if (bundle != null) {
-            this.name.setText(bundle.getString(NAME));
-            this.last_dosage.setText(bundle.getString(DOSAGE));
-            this.prescription.setText(bundle.getString(DESCRIPTION));
+            Medicine medicine = bundle.getParcelable("MEDICINE");
+            this.name.setText(medicine.getName());
+            this.last_dosage.setText(medicine.getDosage());
+            this.prescription.setText(medicine.getDescription());
             this.observation.setText("Tomar em jejum");
-            this.leaflet = bundle.getString(LEAFLET_LINK);
+            this.leaflet = medicine.getLeaflet();
         }
 
 

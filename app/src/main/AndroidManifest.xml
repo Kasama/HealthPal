@@ -41,6 +41,10 @@
             android:screenOrientation="portrait"
             />
         <activity
+            android:name=".MedicineViewActivity"
+            android:label="@string/title_medicine"
+            android:screenOrientation="portrait" />
+        <activity
             android:name=".MedicineListFragment"
             android:screenOrientation="portrait"
             />

@@ -139,6 +139,7 @@
                 android:textColor="@color/colorText"
                 android:textSize="48sp"
                 android:fontFamily="@font/font_awesome_solid"
+                android:onClick="handleLeaflet"
                 />
         </LinearLayout>
     </android.support.constraint.ConstraintLayout>

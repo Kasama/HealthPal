@@ -15,6 +15,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 import br.usp.icmc.healthpal.healthpal.AddMedicineActivity;
+import br.usp.icmc.healthpal.healthpal.MedicineViewActivity;
 import br.usp.icmc.healthpal.healthpal.R;
 import br.usp.icmc.healthpal.healthpal.database.Database;
 import br.usp.icmc.healthpal.healthpal.database.Medicine;
@@ -64,7 +65,7 @@ public class MedicineListAdapter extends RecyclerView.Adapter<MedicineListAdapte
         Medicine medicine = this.medicineList.get(position);
         holder.name.setText(medicine.getName());
         holder.itemView.setOnClickListener(view -> {
-            Intent intent = new Intent(this.context, AddMedicineActivity.class);
+            Intent intent = new Intent(this.context, MedicineViewActivity.class);
             intent.putExtra("MEDICINE", medicine);
             this.context.startActivity(intent);
         });
