@@ -3,6 +3,7 @@ package br.usp.icmc.healthpal.healthpal.components;
 import android.annotation.SuppressLint;
 import android.content.Context;
 import android.content.res.TypedArray;
+import android.graphics.drawable.Drawable;
 import android.support.constraint.ConstraintLayout;
 import android.util.AttributeSet;
 import android.view.LayoutInflater;
@@ -42,12 +43,14 @@ public class ButtonCard extends ConstraintLayout {
                 0, 0
         );
         String icon = a.getString(R.styleable.ButtonCard_iconText);
+        Drawable background = a.getDrawable(R.styleable.ButtonCard_background);
         String label = a.getString(R.styleable.ButtonCard_labelText);
         int fontTextColor = a.getColor(R.styleable.ButtonCard_textColor, R.color.colorText);
         a.recycle();
 
         this.setTextColor(fontTextColor);
         this.setIcon(icon);
+        this.iconText.setBackground(background);
         labelText.setText(label);
     }
 

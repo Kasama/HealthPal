@@ -14,4 +14,7 @@
     <string name="fa_medic">&#xf0f0;</string>
     <string name="fa_call">&#xf098;</string>
     <string name="fa_user">&#xf2bd;</string>
+    <string name="fa_smile">&#xf118;</string>
+    <string name="fa_meh">&#xf11a;</string>
+    <string name="fa_frown">&#xf119;</string>
 </resources>

@@ -23,6 +23,7 @@ public class DashboardFragment extends Fragment {
         this.handler = new AlarmHandler(getActivity());
 
         ButtonCard card = getView().findViewById(R.id.card_add_button);
+        ButtonCard cardAlarm = getView().findViewById(R.id.card_alarm_button);
         DashboardCard card1 = getView().findViewById(R.id.dashicon);
 
         card1.setOnClickListener((e) -> getFragmentManager()
@@ -39,6 +40,10 @@ public class DashboardFragment extends Fragment {
 //                    1, 1,
 //                    MainActivity.class
 //            );
+        });
+        cardAlarm.setOnClickListener((e) -> {
+            Intent i = new Intent(getActivity(), AlarmRaiseActivity.class);
+            getActivity().startActivity(i);
         });
     }
 

@@ -11,6 +11,8 @@
     <string name="title_create_medicine">Adicionar Medicamento</string>
     <string name="title_dashboard">Dashboard</string>
     <string name="title_medicine">Medicamentos</string>
+    <string name="title_contact">Contatos</string>
+    <string name="title_emergency">Emergência</string>
     <string name="card_default_title">Card Title</string>
     <string name="card_default_text">Card Text</string>
     <string name="card_default_footer">Card Footer</string>
@@ -19,8 +21,11 @@
     <string name="title_activity_bottom_navbar">BottomNavbar</string>
     <string name="title_home">Home</string>
     <string name="title_notifications">Notifications</string>
-    <string name="navbar_home">Home</string>
-    <string name="navbar_medicine">Medicine</string>
-    <string name="navbar_contacts">Contacts</string>
-    <string name="navbar_emergency">Emergency</string>
+    <string name="title_alarm_raise">Hora do remédio!</string>
+    <string name="title_alarm_post">Como você está se sentindo?</string>
+    <string name="button_medicine_taken">EU TOMEI O REMÉDIO</string>
+    <string name="navbar_home">Dashboard</string>
+    <string name="navbar_medicine">Medicamentos</string>
+    <string name="navbar_contacts">Contatos</string>
+    <string name="navbar_emergency">Emergência</string>
 </resources>
