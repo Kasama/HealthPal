@@ -17,4 +17,7 @@
     <string name="fa_smile">&#xf118;</string>
     <string name="fa_meh">&#xf11a;</string>
     <string name="fa_frown">&#xf119;</string>
+    <string name="fa_hospital">&#xf47e;</string>
+    <string name="fa_fire_extinguisher">&#xf134;</string>
+    <string name="fa_car">&#xf1ba;</string>
 </resources>

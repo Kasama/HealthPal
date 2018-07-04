@@ -45,6 +45,10 @@
             android:label="@string/title_medicine"
             android:screenOrientation="portrait" />
         <activity
+            android:name=".ContactViewActivity"
+            android:label="@string/title_contact"
+            android:screenOrientation="portrait" />
+        <activity
             android:name=".MedicineListFragment"
             android:screenOrientation="portrait"
             />
