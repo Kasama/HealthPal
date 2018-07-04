@@ -37,55 +37,84 @@
 
             <LinearLayout
                 android:id="@+id/medicineInfo"
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:orientation="vertical"
-                android:gravity="center">
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
 
                 <LinearLayout
-                    android:id="@+id/contactInfo"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:orientation="vertical"
-                    android:layout_marginBottom="50dp">
+                    android:layout_marginBottom="25dp">
                     <TextView
-                        android:id="@+id/contactName"
+                        android:id="@+id/medicineName"
                         android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:text="sudhasudhasudhasu"/>
+                        android:layout_height="wrap_content"/>
                     <TextView
-                        android:id="@+id/contactNumber"
+                        android:id="@+id/lastDosage"
                         android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:text="ajdhasudhasudhasu"/>
+                        android:layout_height="wrap_content"/>
                 </LinearLayout>
-
 
                 <LinearLayout
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:orientation="horizontal"
-                    app:layout_constraintTop_toBottomOf="@id/contactInfo">
-                    <Button
-                        android:id="@+id/medicineEditButton"
-                        android:layout_width="80dp"
-                        android:layout_height="80dp"
-                        android:layout_gravity="right"
-                        android:layout_marginBottom="10dp"
-                        android:layout_marginRight="20dp"
-                        android:background="@drawable/layout_card"
-                        android:onClick="handleEdit"
-                        android:text="@string/fa_edit" />
-
-                    <Button
-                        android:id="@+id/medicineCallDoctor"
-                        android:layout_width="80dp"
-                        android:layout_height="80dp"
-                        android:layout_gravity="right"
-                        android:background="@drawable/layout_card"
-                        android:onClick="handleCall"
-                        android:text="@string/fa_call" />
+                    android:orientation="vertical"
+                    android:layout_marginBottom="25dp">
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/medicine_card_presp"/>
+                    <TextView
+                        android:id="@+id/medicinePrescription"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"/>
                 </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical">
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/medicine_card_obs"/>
+                    <TextView
+                        android:id="@+id/medicineObservation"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"/>
+                </LinearLayout>
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                app:layout_constraintRight_toRightOf="@+id/action_card">
+
+                <Button
+                    android:id="@+id/medicineEditButton"
+                    android:layout_width="80dp"
+                    android:layout_height="80dp"
+                    android:layout_gravity="right"
+                    android:layout_marginRight="24dp"
+                    android:background="@drawable/layout_card"
+                    android:onClick="handleEdit"
+                    android:text="@string/fa_edit"
+                    android:layout_marginBottom="10dp"
+                    />
+
+                <Button
+                    android:id="@+id/medicineCallDoctor"
+                    android:layout_width="80dp"
+                    android:layout_height="80dp"
+                    android:layout_gravity="right"
+                    android:layout_marginRight="24dp"
+                    android:background="@drawable/layout_card"
+                    android:onClick="handleCall"
+                    android:text="@string/fa_medic"
+                    />
 
             </LinearLayout>
 
@@ -104,14 +133,12 @@
             app:layout_constraintRight_toRightOf="parent">
             <!--Modificar ícone em TEXT aqui-->
             <TextView
-                android:id="@+id/medicineIcon"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="@string/fa_user"
+                android:text="@string/fa_pills"
                 android:textColor="@color/colorText"
                 android:textSize="48sp"
                 android:fontFamily="@font/font_awesome_solid"
-                android:onClick="handleLeaflet"
                 />
         </LinearLayout>
     </android.support.constraint.ConstraintLayout>
