@@ -17,6 +17,7 @@
     </declare-styleable>
     <declare-styleable name="ButtonCard">
         <attr name="iconText" />
+        <attr name="background" />
         <attr name="labelText" />
         <attr name="onClick" />
         <attr name="textColor" />

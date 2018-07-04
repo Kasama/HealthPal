@@ -1,7 +1,6 @@
 package br.usp.icmc.healthpal.healthpal;
 
 import android.content.Intent;
-import android.support.design.widget.BottomNavigationView;
 import android.support.v4.app.Fragment;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
@@ -22,6 +21,7 @@ public class DashboardFragment extends Fragment {
         this.handler = new AlarmHandler(getActivity());
 
         ButtonCard card = getView().findViewById(R.id.card_add_button);
+        ButtonCard cardAlarm = getView().findViewById(R.id.card_alarm_button);
         DashboardCard card1 = getView().findViewById(R.id.dashicon);
 
         card1.setOnClickListener((e) -> {
@@ -36,6 +36,10 @@ public class DashboardFragment extends Fragment {
 //                    1, 1,
 //                    MainActivity.class
 //            );
+        });
+        cardAlarm.setOnClickListener((e) -> {
+            Intent i = new Intent(getActivity(), AlarmRaiseActivity.class);
+            getActivity().startActivity(i);
         });
     }
 

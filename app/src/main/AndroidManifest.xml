@@ -3,6 +3,7 @@
     package="br.usp.icmc.healthpal.healthpal">
 
     <uses-permission android:name="android.permission.CALL_PHONE" />
+    <uses-permission android:name="android.permission.VIBRATE" />
 
     <application
         android:allowBackup="true"
@@ -11,19 +12,38 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".MainActivity">
+        <activity
+            android:name=".MainActivity"
+            android:screenOrientation="portrait"
+            >
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".AddMedicineActivity" />
-        <activity android:name=".EditAlarmActivity" />
+        <activity
+            android:name=".AddMedicineActivity"
+            android:screenOrientation="portrait"
+            />
+        <activity
+            android:name=".AlarmRaiseActivity"
+            android:screenOrientation="portrait"
+            android:theme="@style/AppTheme.NoActionBar"
+            />
+        <activity
+            android:name=".EditAlarmActivity"
+            android:screenOrientation="portrait"
+            />
         <activity
             android:name=".BottomNavbar"
-            android:label="@string/title_activity_bottom_navbar" />
-        <activity android:name=".MedicineListFragment"></activity>
+            android:label="@string/title_activity_bottom_navbar"
+            android:screenOrientation="portrait"
+            />
+        <activity
+            android:name=".MedicineListFragment"
+            android:screenOrientation="portrait"
+            />
     </application>
 
 </manifest>

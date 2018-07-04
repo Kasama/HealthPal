@@ -38,6 +38,17 @@
             />
 
         <br.usp.icmc.healthpal.healthpal.components.ButtonCard
+            android:id="@+id/card_alarm_button"
+            android:layout_margin="10dp"
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            app:textColor="@color/colorCardText"
+            app:iconText="@string/fa_clock"
+            app:labelText="ALARME"
+            app:layout_constraintTop_toBottomOf="@id/dashicon"
+            />
+
+        <br.usp.icmc.healthpal.healthpal.components.ButtonCard
             android:id="@+id/card_add_button"
             android:layout_margin="10dp"
             android:layout_width="match_parent"
@@ -45,7 +56,7 @@
             app:textColor="@color/colorCardText"
             app:iconText="@string/fa_plus_circle"
             app:labelText="ADICIONAR"
-            app:layout_constraintTop_toBottomOf="@id/dashicon"
+            app:layout_constraintTop_toBottomOf="@id/card_alarm_button"
             />
     </android.support.constraint.ConstraintLayout>
 </ScrollView>
