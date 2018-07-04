@@ -8,7 +8,7 @@ import static br.usp.icmc.healthpal.healthpal.database.HealPalContract.DATABASE_
 
 @android.arch.persistence.room.Database(
         entities = {Medicine.class, Medic.class},
-        version = 1, exportSchema = false
+        version = 4, exportSchema = false
 )
 public abstract class Database extends RoomDatabase {
     public abstract MedicDao medicDao();
@@ -25,6 +25,6 @@ public abstract class Database extends RoomDatabase {
                 context,
                 Database.class,
                 DATABASE_NAME
-        ).build();
+        ).fallbackToDestructiveMigration().build();
     }
 }

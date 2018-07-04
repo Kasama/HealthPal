@@ -13,6 +13,7 @@ import android.support.annotation.RequiresApi;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.util.Log;
+import android.view.MenuItem;
 import android.view.View;
 import android.widget.AutoCompleteTextView;
 import android.widget.Button;
@@ -46,6 +47,7 @@ public class AddMedicineActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_add_medicine);
+        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
 
         this.db = Database.getInstance(this);
 
@@ -68,12 +70,9 @@ public class AddMedicineActivity extends AppCompatActivity {
             this.leaflet = adapter.getItem(position).getLeaflet();
             this.name.setText(medicineName);
         });
-        this.dateSetListener = new DatePickerDialog.OnDateSetListener() {
-            @Override
-            public void onDateSet(DatePicker view, int year, int month, int dayOfMonth) {
+        this.dateSetListener = (view, year, month, dayOfMonth) ->
                 Log.d(TAG, "onDateSet: date: " + year + "/" + month + "/" + dayOfMonth);
-            }
-        };
+
         this.date.setOnClickListener(new View.OnClickListener() {
                 @RequiresApi(api = Build.VERSION_CODES.N)
                 @Override
@@ -91,12 +90,9 @@ public class AddMedicineActivity extends AppCompatActivity {
                 }
             }
         );
-        this.timeSetListener = new TimePickerDialog.OnTimeSetListener() {
-            @Override
-            public void onTimeSet(TimePicker view, int hourOfDay, int minute) {
+        this.timeSetListener = (view, hourOfDay, minute) ->
                 Log.d(TAG, "onTimeSet: time: " + hourOfDay + ":" + minute);
-            }
-        };
+
         this.time.setOnClickListener(new View.OnClickListener() {
             @RequiresApi(api = Build.VERSION_CODES.N)
             @Override
@@ -115,6 +111,8 @@ public class AddMedicineActivity extends AppCompatActivity {
                 dialog.show();
             }
         });
+
+        this.add.setOnClickListener(this::handleSave);
     }
 
     public void handleCancel(View view) {
@@ -131,7 +129,7 @@ public class AddMedicineActivity extends AppCompatActivity {
                 String description = AddMedicineActivity.this.description.getText().toString();
                 String dosage = AddMedicineActivity.this.dosage.getText().toString();
 
-                Medicine medicine = new Medicine(name, description, dosage, 0, leaflet);
+                Medicine medicine = new Medicine(name, description, dosage, 0L, leaflet);
 
                 db.medicineDao().insert(medicine);
 
@@ -145,5 +143,16 @@ public class AddMedicineActivity extends AppCompatActivity {
             }
         };
         save.execute();
+    }
+
+    @Override
+    public boolean onOptionsItemSelected(MenuItem item) {
+        switch (item.getItemId()) {
+            case android.R.id.home:
+                finish();
+                return true;
+        }
+
+        return super.onOptionsItemSelected(item);
     }
 }

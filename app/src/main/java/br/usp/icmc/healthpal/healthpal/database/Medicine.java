@@ -6,6 +6,7 @@ import android.arch.persistence.room.ForeignKey;
 import android.arch.persistence.room.PrimaryKey;
 import android.os.Parcel;
 import android.os.Parcelable;
+import android.support.annotation.Nullable;
 
 import static br.usp.icmc.healthpal.healthpal.database.HealPalContract.MedicineEntry.DESCRIPTION;
 import static br.usp.icmc.healthpal.healthpal.database.HealPalContract.MedicineEntry.DOSAGE;
@@ -15,12 +16,12 @@ import static br.usp.icmc.healthpal.healthpal.database.HealPalContract.MedicineE
 import static br.usp.icmc.healthpal.healthpal.database.HealPalContract.MedicineEntry.TABLE_NAME;
 
 @Entity(
-        tableName = TABLE_NAME,
-        foreignKeys = @ForeignKey(
-                entity = Medic.class,
-                parentColumns = "_id",
-                childColumns = "medic"
-        )
+        tableName = TABLE_NAME
+//        foreignKeys = @ForeignKey(
+//                entity = Medic.class,
+//                parentColumns = "_id",
+//                childColumns = "medic"
+//        )
 )
 public class Medicine implements Parcelable {
     @PrimaryKey(autoGenerate = true)
@@ -31,12 +32,13 @@ public class Medicine implements Parcelable {
     private String description;
     @ColumnInfo(name = DOSAGE)
     private String dosage;
+    @Nullable
     @ColumnInfo(name = MEDIC)
-    private long medic;
+    private Long medic;
     @ColumnInfo(name = LEAFLET_LINK)
     private String leaflet;
 
-    public Medicine(String name, String description, String dosage, long medic, String leaflet) {
+    public Medicine(String name, String description, String dosage, Long medic, String leaflet) {
         this.name = name;
         this.description = description;
         this.dosage = dosage;
@@ -120,11 +122,11 @@ public class Medicine implements Parcelable {
         this.dosage = dosage;
     }
 
-    public long getMedic() {
+    public Long getMedic() {
         return medic;
     }
 
-    public void setMedic(long medic) {
+    public void setMedic(Long medic) {
         this.medic = medic;
     }
 

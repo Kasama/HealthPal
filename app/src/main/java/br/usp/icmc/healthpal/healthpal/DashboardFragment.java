@@ -1,6 +1,7 @@
 package br.usp.icmc.healthpal.healthpal;
 
 import android.content.Intent;
+import android.support.annotation.NonNull;
 import android.support.design.widget.BottomNavigationView;
 import android.support.v4.app.Fragment;
 import android.os.Bundle;
@@ -18,15 +19,17 @@ public class DashboardFragment extends Fragment {
 //    DashboardCard card;
 
     @Override
-    public void onViewCreated(View view, @Nullable Bundle savedInstanceState) {
+    public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
         this.handler = new AlarmHandler(getActivity());
 
         ButtonCard card = getView().findViewById(R.id.card_add_button);
         DashboardCard card1 = getView().findViewById(R.id.dashicon);
 
-        card1.setOnClickListener((e) -> {
-            getFragmentManager().beginTransaction().replace(R.id.fragment_container, new MedicineListFragment()).commit();
-        });
+        card1.setOnClickListener((e) -> getFragmentManager()
+                .beginTransaction()
+                .replace(R.id.fragment_container, new MedicineListFragment())
+                .commit()
+        );
 
         card.setOnClickListener((e) -> {
             Intent i = new Intent(getActivity(), AddMedicineActivity.class);

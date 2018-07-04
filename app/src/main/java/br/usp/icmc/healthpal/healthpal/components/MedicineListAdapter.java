@@ -9,7 +9,9 @@ import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.TextView;
 
+import java.util.ArrayList;
 import java.util.List;
 
 import br.usp.icmc.healthpal.healthpal.AddMedicineActivity;
@@ -24,26 +26,28 @@ public class MedicineListAdapter extends RecyclerView.Adapter<MedicineListAdapte
     private List<Medicine> medicineList;
 
     public MedicineListAdapter(Context context, final Database db) {
+        this.medicineList = new ArrayList<>();
         this.context = context;
         this.db = db;
         loadData();
     }
 
-    public void loadData() {
+    private void loadData() {
         @SuppressLint("StaticFieldLeak")
-        AsyncTask<Void, Void, Void> loadCursor = new AsyncTask<Void, Void, Void>() {
-            @Override
-            protected Void doInBackground(Void... params) {
-                medicineList = db.medicineDao().getAll();
-                return null;
-            }
+        AsyncTask<Void, Void, Void> loadCursor =
+                new AsyncTask<Void, Void, Void>() {
+                    @Override
+                    protected Void doInBackground(Void... params) {
+                        medicineList = db.medicineDao().getAll();
+                        return null;
+                    }
 
-            @Override
-            protected void onPostExecute(Void aVoid) {
-                super.onPostExecute(aVoid);
-                notifyDataSetChanged();
-            }
-        };
+                    @Override
+                    protected void onPostExecute(Void medicines) {
+                        super.onPostExecute(medicines);
+                        notifyDataSetChanged();
+                    }
+                };
         loadCursor.execute();
     }
 
@@ -57,9 +61,10 @@ public class MedicineListAdapter extends RecyclerView.Adapter<MedicineListAdapte
 
     @Override
     public void onBindViewHolder(@NonNull ViewHolder holder, int position) {
+        Medicine medicine = this.medicineList.get(position);
+        holder.name.setText(medicine.getName());
         holder.itemView.setOnClickListener(view -> {
             Intent intent = new Intent(this.context, AddMedicineActivity.class);
-            Medicine medicine = this.medicineList.get(position);
             intent.putExtra("MEDICINE", medicine);
             this.context.startActivity(intent);
         });
@@ -67,12 +72,16 @@ public class MedicineListAdapter extends RecyclerView.Adapter<MedicineListAdapte
 
     @Override
     public int getItemCount() {
-        return 0;
+        return this.medicineList.size();
     }
 
     public class ViewHolder extends RecyclerView.ViewHolder {
+        public View view;
+        TextView name;
         public ViewHolder(View itemView) {
             super(itemView);
+            view = itemView;
+            name = itemView.findViewById(R.id.medicineFragmentName);
         }
     }
 }
