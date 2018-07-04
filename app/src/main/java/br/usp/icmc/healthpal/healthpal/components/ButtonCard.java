@@ -51,7 +51,15 @@ public class ButtonCard extends ConstraintLayout {
         this.setTextColor(fontTextColor);
         this.setIcon(icon);
         this.iconText.setBackground(background);
-        labelText.setText(label);
+        this.setLabelText(label);
+    }
+
+    public void setLabelText(String label) {
+        this.labelText.setText(label);
+    }
+
+    public void setLabelText(int stringRes) {
+        this.labelText.setText(getResources().getString(stringRes));
     }
 
     private void setTextColor(int fontTextColor) {
@@ -68,17 +76,10 @@ public class ButtonCard extends ConstraintLayout {
     }
 
     @Override
-    protected void onMeasure(int widthMeasureSpec, int heightMeasureSpec) {
-        super.onMeasure(widthMeasureSpec, heightMeasureSpec);
-//        int width = getMeasuredWidth();
-//        int height = getMeasuredHeight();
-//        int squareLen = width;
-//        if (height > width) {
-//            squareLen = height;
-//        }
-//        setMeasuredDimension(
-//                MeasureSpec.makeMeasureSpec(squareLen, MeasureSpec.EXACTLY),
-//                MeasureSpec.makeMeasureSpec(squareLen, MeasureSpec.EXACTLY)
-//        );
+    public void setEnabled(boolean enabled) {
+        super.setEnabled(enabled);
+        int drawableId = enabled ? R.drawable.layout_card : R.drawable.layout_card_disabled;
+        Drawable drawable = getResources().getDrawable(drawableId);
+        this.layout.setBackground(drawable);
     }
 }

@@ -7,12 +7,13 @@ import android.content.Context;
 import static br.usp.icmc.healthpal.healthpal.database.HealPalContract.DATABASE_NAME;
 
 @android.arch.persistence.room.Database(
-        entities = {Medicine.class, Medic.class},
-        version = 4, exportSchema = false
+        entities = {Medicine.class, Medic.class, Alarm.class},
+        version = 5, exportSchema = false
 )
 public abstract class Database extends RoomDatabase {
     public abstract MedicDao medicDao();
     public abstract MedicineDao medicineDao();
+    public abstract AlarmDao alarmDao();
     private static Database instance;
     public synchronized static Database getInstance(final Context context) {
         if (instance == null) {

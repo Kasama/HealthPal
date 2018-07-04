@@ -116,15 +116,14 @@ public class AddMedicineActivity extends AppCompatActivity {
     }
 
     public void handleCancel(View view) {
-        Intent intent = new Intent(this, MainActivity.class);
-        this.startActivity(intent);
+        finish();
     }
 
     public void handleSave(View view) {
         @SuppressLint("StaticFieldLeak")
-        AsyncTask<Void, Void, Void> save = new AsyncTask<Void, Void, Void>() {
+        AsyncTask<Void, Void, Medicine> save = new AsyncTask<Void, Void, Medicine>() {
             @Override
-            protected Void doInBackground(Void... voids) {
+            protected Medicine doInBackground(Void... voids) {
                 String name = AddMedicineActivity.this.name.getText().toString();
                 String description = AddMedicineActivity.this.description.getText().toString();
                 String dosage = AddMedicineActivity.this.dosage.getText().toString();
@@ -133,12 +132,15 @@ public class AddMedicineActivity extends AppCompatActivity {
 
                 db.medicineDao().insert(medicine);
 
-                return null;
+                return medicine;
             }
 
             @Override
-            protected void onPostExecute(Void aVoid) {
-                super.onPostExecute(aVoid);
+            protected void onPostExecute(Medicine medicine) {
+                super.onPostExecute(medicine);
+                Intent data = new Intent();
+                data.putExtra("MEDICINE", medicine);
+                setResult(RESULT_OK, data);
                 handleCancel(view);
             }
         };

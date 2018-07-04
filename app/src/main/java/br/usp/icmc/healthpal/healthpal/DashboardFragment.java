@@ -27,7 +27,9 @@ public class DashboardFragment extends Fragment {
         DashboardCard card1 = getView().findViewById(R.id.dashicon);
 
         card1.setOnClickListener((e) -> {
-            getFragmentManager().beginTransaction().replace(R.id.fragment_container, new MedicineListFragment()).commit();
+//            getFragmentManager().beginTransaction().replace(R.id.fragment_container, new MedicineListFragment()).commit();
+            Intent i = new Intent(getActivity(), EditAlarmActivity.class);
+            getActivity().startActivity(i);
         });
 
         card.setOnClickListener((e) -> {
