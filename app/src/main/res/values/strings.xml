@@ -28,4 +28,5 @@
     <string name="navbar_medicine">Medicamentos</string>
     <string name="navbar_contacts">Contatos</string>
     <string name="navbar_emergency">Emergência</string>
+    <string name="add">ADICIONAR</string>
 </resources>
