@@ -22,8 +22,8 @@
     <string name="title_alarm_raise">Hora do remédio!</string>
     <string name="title_alarm_post">Como você está se sentindo?</string>
     <string name="button_medicine_taken">EU TOMEI O REMÉDIO</string>
-    <string name="navbar_home">Home</string>
-    <string name="navbar_medicine">Medicine</string>
-    <string name="navbar_contacts">Contacts</string>
-    <string name="navbar_emergency">Emergency</string>
+    <string name="navbar_home">Dashboard</string>
+    <string name="navbar_medicine">Medicamentos</string>
+    <string name="navbar_contacts">Contatos</string>
+    <string name="navbar_emergency">Emergência</string>
 </resources>
