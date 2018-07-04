@@ -12,9 +12,13 @@ import br.usp.icmc.healthpal.healthpal.Alarm.AlarmHandler;
 import br.usp.icmc.healthpal.healthpal.components.AlarmNotification;
 import br.usp.icmc.healthpal.healthpal.components.ButtonCard;
 import br.usp.icmc.healthpal.healthpal.components.DashboardCard;
+import br.usp.icmc.healthpal.healthpal.database.Alarm;
+
+import static android.app.Activity.RESULT_OK;
 
 public class DashboardFragment extends Fragment {
     AlarmHandler handler;
+    private static final int CREATE_ALARM_ACTION = 271;
 //    DashboardCard card;
 
     @Override
@@ -42,8 +46,8 @@ public class DashboardFragment extends Fragment {
 //            );
         });
         cardAlarm.setOnClickListener((e) -> {
-            Intent i = new Intent(getActivity(), AlarmRaiseActivity.class);
-            getActivity().startActivity(i);
+            Intent i = new Intent(getActivity(), EditAlarmActivity.class);
+            this.startActivityForResult(i, CREATE_ALARM_ACTION);
         });
         cardNotify.setOnClickListener((e) -> {
             AlarmNotification notification = new AlarmNotification();
@@ -56,5 +60,28 @@ public class DashboardFragment extends Fragment {
     public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container,
                              @Nullable Bundle savedInstanceState) {
         return inflater.inflate(R.layout.fragment_dashboard, container, false);
+    }
+
+    @Override
+    public void onActivityResult(int requestCode, int resultCode, Intent data) {
+        switch (requestCode) {
+            case CREATE_ALARM_ACTION:
+                if (resultCode != RESULT_OK) return;
+                Alarm alarm = data.getParcelableExtra("ALARM");
+                this.createAlarm(alarm);
+            default:
+                break;
+        }
+    }
+
+    private void createAlarm(Alarm alarm) {
+        Bundle data = new Bundle();
+        data.putParcelable("ALARM", alarm);
+        this.handler.setAlarm(
+                alarm.getStartTime().getTime(),
+                alarm.getInterval(), (int) alarm.get_id(),
+                AlarmRaiseActivity.class,
+                data
+        );
     }
 }

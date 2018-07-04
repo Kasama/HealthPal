@@ -29,7 +29,7 @@
             app:layout_constraintTop_toTopOf="parent"
             />
         <TextView
-            android:id="@+id/tv_medicine_dosage"
+            android:id="@+id/tv_medicine_description"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="1 (uma) cápsula"
@@ -50,7 +50,7 @@
             app:textColor="@color/colorCardText"
             app:background="@drawable/comment"
             app:labelText="@string/button_medicine_taken"
-            app:layout_constraintTop_toBottomOf="@id/tv_medicine_dosage"
+            app:layout_constraintTop_toBottomOf="@id/tv_medicine_description"
             />
     </android.support.constraint.ConstraintLayout>
     <LinearLayout

@@ -11,6 +11,7 @@ import java.util.List;
 import static android.provider.BaseColumns._ID;
 import static br.usp.icmc.healthpal.healthpal.database.HealPalContract.MedicineEntry.MEDIC;
 import static br.usp.icmc.healthpal.healthpal.database.HealPalContract.MedicineEntry.TABLE_NAME;
+import static java.nio.file.attribute.AclEntryType.ALARM;
 
 @Dao
 public interface MedicineDao {
