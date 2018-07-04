@@ -5,6 +5,7 @@ import android.os.Bundle;
 import android.support.v4.app.Fragment;
 import android.support.v7.app.AppCompatActivity;
 
+import br.usp.icmc.healthpal.healthpal.components.AlarmNotification;
 import br.usp.icmc.healthpal.healthpal.database.Alarm;
 
 public class AlarmRaiseActivity extends AppCompatActivity {
@@ -16,6 +17,8 @@ public class AlarmRaiseActivity extends AppCompatActivity {
         setContentView(R.layout.activity_alarm_raise);
 
         Intent incomingIntent = this.getIntent();
+//        AlarmNotification notification = new AlarmNotification();
+//        notification.push(this, 0);
 
         if (savedInstanceState != null) {
             mFragment = getSupportFragmentManager().getFragment(savedInstanceState, "currentFragment");

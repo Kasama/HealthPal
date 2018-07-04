@@ -33,7 +33,7 @@ public class AddMedicineActivity extends AppCompatActivity {
     private EditText description;
     private EditText dosage;
     private ButtonCard add;
-    private Button date, time;
+//    private Button date, time;
     private DatePickerDialog.OnDateSetListener dateSetListener;
     private TimePickerDialog.OnTimeSetListener timeSetListener;
 
@@ -55,8 +55,8 @@ public class AddMedicineActivity extends AppCompatActivity {
         this.dosage = findViewById(R.id.form_medicine_dosage);
         this.description = findViewById(R.id.form_medicine_description);
         this.add = findViewById(R.id.form_medicine_button_add);
-        this.date = findViewById(R.id.form_medicine_button_date);
-        this.time = findViewById(R.id.form_medicine_button_time);
+//        this.date = findViewById(R.id.form_medicine_button_date);
+//        this.time = findViewById(R.id.form_medicine_button_time);
 
         this.add.setOnClickListener((View view) -> {
 //            handleSave(view);
@@ -70,47 +70,47 @@ public class AddMedicineActivity extends AppCompatActivity {
             this.leaflet = adapter.getItem(position).getLeaflet();
             this.name.setText(medicineName);
         });
-        this.dateSetListener = (view, year, month, dayOfMonth) ->
-                Log.d(TAG, "onDateSet: date: " + year + "/" + month + "/" + dayOfMonth);
-
-        this.date.setOnClickListener(new View.OnClickListener() {
-                @RequiresApi(api = Build.VERSION_CODES.N)
-                @Override
-                public void onClick(View view) {
-                    Calendar cal = Calendar.getInstance();
-                    year = cal.get(Calendar.YEAR);
-                    month = cal.get(Calendar.MONTH);
-                    day = cal.get(Calendar.DAY_OF_MONTH);
-
-                    DatePickerDialog dialog = new DatePickerDialog(
-                        AddMedicineActivity.this,
-                        dateSetListener,
-                        year, month, day);
-                    dialog.show();
-                }
-            }
-        );
-        this.timeSetListener = (view, hourOfDay, minute) ->
-                Log.d(TAG, "onTimeSet: time: " + hourOfDay + ":" + minute);
-
-        this.time.setOnClickListener(new View.OnClickListener() {
-            @RequiresApi(api = Build.VERSION_CODES.N)
-            @Override
-            public void onClick(View v) {
-                Calendar cal = Calendar.getInstance();
-                hour = cal.get(Calendar.HOUR_OF_DAY);
-                minute = cal.get(Calendar.MINUTE);
-
-                TimePickerDialog dialog = new TimePickerDialog(
-                        AddMedicineActivity.this,
-                        timeSetListener,
-                        hour,
-                        minute,
-                        android.text.format.DateFormat.is24HourFormat(AddMedicineActivity.this)
-                );
-                dialog.show();
-            }
-        });
+//        this.dateSetListener = (view, year, month, dayOfMonth) ->
+//                Log.d(TAG, "onDateSet: date: " + year + "/" + month + "/" + dayOfMonth);
+//
+//        this.date.setOnClickListener(new View.OnClickListener() {
+//                @RequiresApi(api = Build.VERSION_CODES.N)
+//                @Override
+//                public void onClick(View view) {
+//                    Calendar cal = Calendar.getInstance();
+//                    year = cal.get(Calendar.YEAR);
+//                    month = cal.get(Calendar.MONTH);
+//                    day = cal.get(Calendar.DAY_OF_MONTH);
+//
+//                    DatePickerDialog dialog = new DatePickerDialog(
+//                        AddMedicineActivity.this,
+//                        dateSetListener,
+//                        year, month, day);
+//                    dialog.show();
+//                }
+//            }
+//        );
+//        this.timeSetListener = (view, hourOfDay, minute) ->
+//                Log.d(TAG, "onTimeSet: time: " + hourOfDay + ":" + minute);
+//
+//        this.time.setOnClickListener(new View.OnClickListener() {
+//            @RequiresApi(api = Build.VERSION_CODES.N)
+//            @Override
+//            public void onClick(View v) {
+//                Calendar cal = Calendar.getInstance();
+//                hour = cal.get(Calendar.HOUR_OF_DAY);
+//                minute = cal.get(Calendar.MINUTE);
+//
+//                TimePickerDialog dialog = new TimePickerDialog(
+//                        AddMedicineActivity.this,
+//                        timeSetListener,
+//                        hour,
+//                        minute,
+//                        android.text.format.DateFormat.is24HourFormat(AddMedicineActivity.this)
+//                );
+//                dialog.show();
+//            }
+//        });
 
         this.add.setOnClickListener(this::handleSave);
     }

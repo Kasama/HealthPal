@@ -46,27 +46,27 @@ public class AlarmAlertFragment extends Fragment {
     }
 
     private void setupMedicine() {
-        @SuppressLint("StaticFieldLeak")
-        AsyncTask<Void, Void, Medicine> task = new AsyncTask<Void, Void, Medicine>() {
-            @Override
-            protected Medicine doInBackground(Void... voids) {
-                triggeredMedicine = db.medicineDao().getById(triggeredAlarm.getMedicine());
-                return triggeredMedicine;
-            }
-
-            @Override
-            protected void onPostExecute(Medicine medicine) {
-                super.onPostExecute(medicine);
-                updateView();
-            }
-
-        };
-        task.execute();
+//        @SuppressLint("StaticFieldLeak")
+//        AsyncTask<Void, Void, Medicine> task = new AsyncTask<Void, Void, Medicine>() {
+//            @Override
+//            protected Medicine doInBackground(Void... voids) {
+//                triggeredMedicine = db.medicineDao().getById(triggeredAlarm.getMedicine());
+//                return triggeredMedicine;
+//            }
+//
+//            @Override
+//            protected void onPostExecute(Medicine medicine) {
+//                super.onPostExecute(medicine);
+//                updateView();
+//            }
+//
+//        };
+//        task.execute();
     }
 
     private void updateView() {
-        medicineName.setText(triggeredMedicine.getName() + ", " + triggeredMedicine.getDosage());
-        medicineDescription.setText(triggeredMedicine.getDescription());
+//        medicineName.setText(triggeredMedicine.getName() + ", " + triggeredMedicine.getDosage());
+//        medicineDescription.setText(triggeredMedicine.getDescription());
     }
 
     @Override
