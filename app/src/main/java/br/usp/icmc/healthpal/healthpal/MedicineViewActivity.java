@@ -29,7 +29,7 @@ public class MedicineViewActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
 
-        setContentView(R.layout.medicine_card);
+        setContentView(R.layout.activity_medicine_card);
 
         Intent intent = getIntent();
         Bundle bundle = intent.getExtras();
