@@ -11,6 +11,8 @@
     <string name="title_create_medicine">Adicionar Medicamento</string>
     <string name="title_dashboard">Dashboard</string>
     <string name="title_medicine">Medicamentos</string>
+    <string name="title_contact">Contatos</string>
+    <string name="title_emergency">Emergência</string>
     <string name="card_default_title">Card Title</string>
     <string name="card_default_text">Card Text</string>
     <string name="card_default_footer">Card Footer</string>
