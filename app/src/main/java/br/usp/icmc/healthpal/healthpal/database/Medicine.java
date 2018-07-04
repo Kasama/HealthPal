@@ -130,4 +130,8 @@ public class Medicine implements Parcelable {
         this.medic = medic;
     }
 
+    @Override
+    public String toString() {
+        return this.getName();
+    }
 }
