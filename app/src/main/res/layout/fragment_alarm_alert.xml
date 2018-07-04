@@ -14,7 +14,6 @@
         android:paddingTop="75sp"
         android:paddingBottom="25sp"
         >
-        <!--Inserir conteúdo aqui-->
         <TextView
             android:id="@+id/tv_medicine_name"
             android:layout_width="match_parent"
@@ -66,7 +65,6 @@
         app:layout_constraintBottom_toTopOf="@id/action_card"
         android:translationY="60sp"
         >
-        <!--Modificar ícone em TEXT aqui-->
         <TextView
             android:id="@+id/action_card_icon"
             android:layout_height="58sp"
@@ -75,7 +73,6 @@
             android:textColor="@color/colorText"
             />
     </LinearLayout>
-    <!--Modificar título do card em TEXT aqui-->
     <TextView
         android:id="@+id/tv_action_card_title"
         android:layout_width="match_parent"

@@ -36,7 +36,9 @@ public class AlarmAlertFragment extends Fragment {
         bcMedicineTaken = getView().findViewById(R.id.button_medicine_taken);
         bcMedicineTaken.setOnClickListener((e) -> {
             this.vibrateStop();
-            getActivity().finish();
+            getFragmentManager()
+                    .beginTransaction()
+                    .replace(R.id.fragment_container, new AlarmPostFragment()).commit();
         });
 
         icon = getView().findViewById(R.id.action_card_icon);
