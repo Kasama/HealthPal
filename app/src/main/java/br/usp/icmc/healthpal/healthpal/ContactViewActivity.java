@@ -11,7 +11,7 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
 
-import org.w3c.dom.Text;
+import br.usp.icmc.healthpal.healthpal.database.Medic;
 
 import static br.usp.icmc.healthpal.healthpal.database.HealPalContract.MedicEntry.PHONE;
 import static br.usp.icmc.healthpal.healthpal.database.HealPalContract.MedicineEntry.NAME;
@@ -25,7 +25,7 @@ public class ContactViewActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
 
-        setContentView(R.layout.contact_card);
+        setContentView(R.layout.activity_contact_card);
 
         Intent intent = getIntent();
         Bundle bundle = intent.getExtras();
@@ -38,8 +38,9 @@ public class ContactViewActivity extends AppCompatActivity {
 
 
         if (bundle != null) {
-            this.name.setText(bundle.getString(NAME));
-            this.number.setText(bundle.getString(PHONE));
+            Medic medic = bundle.getParcelable("MEDIC");
+            this.name.setText(medic.getName());
+            this.number.setText(medic.getPhone());
         }
     }
 
